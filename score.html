@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall of Fame</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center vh-100">
+    <div id="score-container" class="text-center p-4 bg-white rounded shadow-sm">
+        <h1>Wall of Fame</h1>
+        <table id="score-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Mot</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <a href="index.html" class="btn btn-secondary mt-3">Revenir au menu principal</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const response = await fetch('http://localhost:3000/scores');
+            const scores = await response.json();
+            const tbody = document.querySelector('#score-table tbody');
+            scores.forEach(score => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${score.name}</td>
+                    <td>${score.word}</td>
+                    <td>${score.score}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>

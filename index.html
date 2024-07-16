@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center vh-100">
+    <div id="game-container" class="text-center p-4 bg-white rounded shadow-sm">
+        <h1>Motus</h1>
+        <div id="word-display" class="mb-3"></div>
+        <div id="input-container" class="mb-3">
+            <input type="text" id="guess-input" maxlength="6" class="form-control d-inline-block w-auto mr-2">
+            <button id="submit-guess" class="btn btn-primary">Valider</button>
+        </div>
+        <div id="message" class="mb-3"></div>
+        <div id="score-form" class="hidden">
+            <input type="text" id="player-name" placeholder="Votre nom" class="form-control mb-2">
+            <button id="submit-score" class="btn btn-success">Soumettre le score</button>
+        </div>
+        <a href="score.html" class="btn btn-secondary mt-3">Voir le Wall of Fame</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

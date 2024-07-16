@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+#word-display {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+#score-container {
+    width: 100%;
+    max-width: 600px;
+}
